@@ -1,9 +1,9 @@
 package com.example.api.Controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +15,7 @@ import com.example.api.Services.CustomerService;
 
 import lombok.RequiredArgsConstructor;
 
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 
 @RestController
 @RequestMapping("/api/customers")
@@ -26,11 +26,12 @@ public class CustomerController {
 
     @GetMapping
     public List<Customer> getAllCustomers() {
-        return service.getmethodList();
+        return service.findAll();
     }
 
     @PostMapping
     public Customer createCustomer(@RequestBody Customer customer) {
+        customer.setCreatedAt(LocalDateTime.now());
         return service.save(customer);
     }
 }
