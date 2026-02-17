@@ -1,0 +1,27 @@
+# Maven build outputs
+target/
+
+# Maven wrapper and local files
+.mvn/
+.mvnw
+.mvnw.cmd
+
+# Git
+.git
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# Ignore local env files
+.env
+
+# Ignore Dockerfile itself if building from repo root
+Dockerfile
+
+# JARs
+*.jar
