@@ -1,0 +1,24 @@
+# Ignore local build artifacts and IDE files
+target/
+api/target/
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+# Git
+.git
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs and env
+*.log
+.env
+
+# Ignore jars (Dockerfile must be accessible for builds)
+*.jar
+# Dockerfile

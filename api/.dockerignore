@@ -21,7 +21,7 @@ target/
 .env
 
 # Ignore Dockerfile itself if building from repo root
-Dockerfile
+# (removed because we build from repository root)
 
 # JARs
 *.jar
