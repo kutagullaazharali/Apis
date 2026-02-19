@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.api.ApiResponse;
 import com.example.api.Model.Customer;
 import com.example.api.Services.CustomerService;
 
@@ -25,8 +26,9 @@ public class CustomerController {
     private CustomerService service;
 
     @GetMapping
-    public List<Customer> getAllCustomers() {
-        return service.findAll();
+    public ApiResponse<List<Customer>> getAllCustomers() {
+        List<Customer> customers = service.findAll();
+        return new ApiResponse<>("success", customers.size(), customers);
     }
 
     @PostMapping
