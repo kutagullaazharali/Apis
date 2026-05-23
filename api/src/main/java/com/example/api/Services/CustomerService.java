@@ -19,6 +19,10 @@ public class CustomerService {
     }
 
     public Customer save(Customer customer) {
+        boolean exists = repo.existsByEmail(customer.getEmail());
+        if (exists) {
+            throw new RuntimeException("Email already exists");
+        }
         return repo.save(customer);
     }
 }
